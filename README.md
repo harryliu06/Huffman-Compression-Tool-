@@ -49,3 +49,29 @@ I've also included a Node.h file that can be used for the huffman tree or as an 
 
 
 ## Enter you description below:
+###How to Use: 
+Choose to compress or decompress
+Provide the input file path to compress or decompress
+Provide the output file path to store the compressed or decompressed content
+
+
+###Implementation: 
+Compression: 
+-Reads the input file
+-Put each character into inputString 
+-Count each character’s frequency and store in unordered map
+-Build tree from leaf (Use priority queue to sort based on frequency)
+-Using tree, generate the binary string path for each character
+-Insert the frequency map and total valid bits into header of output File in the format of 
+-Total Valid Bits + “#” + (ASCII value) + Unit Separator (char(31)) + Binary string path + '|'
+-Insert the binary string paths of each character in inputString to output File
+
+###Decompression:
+-Reads the headers and bitstream in the compressed inputFile
+-Using Total Valid Bits from the header, the program limits the bits that need to be read
+-Reconstruct the tree using the frequency table from the header
+-Walks the tree to decode the binary strings 
+-Print the decoded content to output File
+
+###Result:
+Original size of MOBY-DICK file is 1,247 KB and after compressing with Huffman program, file size is reduced to 724 KB, approximately reducing 41%. 
