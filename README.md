@@ -55,8 +55,10 @@ I've also included a Node.h file that can be used for the huffman tree or as an 
   - Choose whether to compress or decompress a file.
   
   - Provide the input file path for compression or decompression.
-  
+    - For output file path for compression,  you can create a new file to store where the compressed content.
+      
   - Provide the output file path where the compressed or decompressed result will be stored.
+    - Create a new file where you want to store the decompressed version of the compressed file
 
 **Implementation**
   
