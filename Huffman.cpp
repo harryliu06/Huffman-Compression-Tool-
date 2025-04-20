@@ -82,7 +82,7 @@ void Huffman::generateCode(std::unordered_map<char, std::string>& convertMap, No
     generateCode(convertMap, node->one, stringPath + "1");
 }
 
-std::string Huffman::encode(std::string& inFile, std::string& headerOutput, const std::string& outFile)
+void Huffman::encode(std::string& inFile, std::string& headerOutput, const std::string& outFile)
 {
     std::ifstream in(inFile, std::ios::binary);
     std::string inputText;
@@ -147,10 +147,16 @@ void Huffman::decode(Node* node, const std::string& freqBinary, char c)
     for (char bit: freqBinary)
     {
         if (bit == '0') {
-            if (!current->zero) current->zero = new Node('\0', 0);
+            if (!current->zero)
+            {
+                current->zero = new Node('\0', 0);
+            }
             current = current->zero;
         } else if (bit == '1') {
-            if (!current->one) current->one = new Node('\0', 0);
+            if (!current->one)
+            {
+                current->one = new Node('\0', 0);
+            }
             current = current->one;
         }
     }
