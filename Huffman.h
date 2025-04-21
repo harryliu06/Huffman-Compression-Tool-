@@ -15,6 +15,9 @@
 class Huffman
 {
 private:
+    /**
+     * Tree root Node
+     */
     Node* root;
 public:
     /**

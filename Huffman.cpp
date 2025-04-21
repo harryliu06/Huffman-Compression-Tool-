@@ -61,8 +61,8 @@ Node* Huffman::buildTree(const std::unordered_map<char, int>& freq)
     {
         this->root = pq.top();
         pq.pop();
-        return this->root;
     }
+    return this->root;
 }
 
 void Huffman::generateCode(std::unordered_map<char, std::string>& convertMap, Node* node, const std::string& stringPath)
@@ -226,7 +226,6 @@ void Huffman::decompress(const std::string& inFile, const std::string& outFile)
             }
         }
     }
-
 
     std::ofstream out(outFile, std::ios::binary);
 
